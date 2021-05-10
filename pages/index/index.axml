@@ -16,8 +16,8 @@
     <!-- 右 -->
     <view class="padding-top-sm relative">
           <view class="top_r">
-             <image src="/static/image/jfb.png" mode="aspectFit" class="icon-30"></image>
-             <text>集分宝：{{userInfo.Jifenbao}}</text>
+             <image src="/static/image/jinbi.png" mode="aspectFit" class="icon-30"></image>
+             <text>金币：{{userInfo.Coin}}</text>
           </view>
           <view class="flex justify-end padding-right-sm" >
               <image class="top_icon" src="/static/image/kf.webp" mode="aspectFit"></image>
@@ -45,27 +45,22 @@
           <image onTap="go" class="img_anniu" mode="scaleToFill" src="/static/image/anniu.webp"/>
     </view>
     <view class="margin-lr-sm">
-      <!-- 阿里图片灯火广告 -->
-      <view class="relative  padding-bottom-xs">
-          <view class="{{alBanShow?'bg-white':''}} radius-20 padding-xs margin-lr-sm">
-              <view class="" a:if="{{syalggList&&userInfo.NumberCompletions>=syalggList[0].NumberPopups&&syalggList[0].IsDone==false&&alBanShow}}">
-                <view class="flex justify-between align-center padding-tb-sm">
-                    <view class="text-28 text-black bold">
-                        <text style="color:#52B579">限时</text>
-                        <text>集分宝福利</text>
-                    </view>
-                    <view class="flex align-center">
-                      <image class="icon-30" src="/static/image/jfb.png" mode="widthFix"></image>
-                      <view class="margin-left-xs flex align-center">
-                        <text class="text-22 text-black">点击浏览广告，可随机获得</text>
-                        <text class="text-22 text-F5741D">1~{{syalggList[0].RewardAmount+1}}个集分宝</text>
-                      </view>
-                    </view>
+    <!-- 阿里图片灯火广告提示语 -->
+      <view class="text-center relative" a:if="{{syalggList&&userInfo.NumberCompletions>=syalggList[0].NumberPopups&&syalggList[0].IsDone==false&&alBanShow}}">
+            <view class="flex justify-center">
+                <image style="width:690rpx" src="../../static/image/xs.png" mode="widthFix"></image>
+                <view class="xianshiText flex align-center">
+                  <image class="icon-30" src="/static/image/jfb.png" mode="widthFix"></image>
+                  <text class="text-22 text-black">点击浏览广告，可随机获得</text>
+                  <text class="text-22 text-F5741D">1~{{syalggList[0].RewardAmount+1}}个集分宝</text>
                 </view>
             </view>
+      </view>
+      <!-- 阿里图片灯火广告 -->
+      <view class="relative  padding-bottom-xs">
+          <view>
               <view  class="flex justify-center "  data-num="{{syalggList[0].NumberPopups}}" data-modalInfo="{{syalggList[0].IsDone}}" data-item="{{syalggList[0]}}" data- onTap="jump_banner">
-              
-                <ad class="" style="width:650rpx"
+                <ad class="ad1"
                 unit-id ="ad_tiny_2021002142657620_202105082200010323"
                 onLoad="onRenderSuccess"
                 onError="onRenderFail"
