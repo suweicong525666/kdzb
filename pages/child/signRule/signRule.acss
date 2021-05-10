@@ -1,0 +1,8 @@
+.pages{ 
+  position: fixed;
+  min-height: 100%;
+  width:100%;
+  background-position: 100% 10%;
+  background-size: cover;
+  background-image: url('/static/image/gzbj.webp')
+}
